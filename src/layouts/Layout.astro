@@ -1,0 +1,76 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Workshop de Sono | Corpore × MEV Vale — 26/07/2026",
+  description = "Um workshop presencial e exclusivo com 4 médicos especialistas e um Educador Físico sobre sono e qualidade de vida. 26 de julho, domingo, 9h às 12h. Apenas 40 vagas. São José dos Campos.",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/logo-amarelo-icone.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Corpore Training Gym" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Workshop de Sono — Corpore × MEV Vale",
+      "startDate": "2026-07-26T09:00:00-03:00",
+      "endDate": "2026-07-26T12:00:00-03:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Academia Corpore",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Barão do Rio Branco, 540",
+          "addressLocality": "São José dos Campos",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Corpore Training Gym",
+        "url": "https://corporetraininggym.com.br"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "60",
+        "priceCurrency": "BRL",
+        "url": "https://corporetraininggym.com.br/link/workshop-sono/",
+        "availability": "https://schema.org/LimitedAvailability"
+      }
+    })} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

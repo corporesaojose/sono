@@ -1,0 +1,12 @@
+Copie os seguintes arquivos do projeto corpore-health-map para esta pasta:
+
+1. logo-branco.png
+   Origem: C:\Users\User\Desktop\Claude-Code\corpore-health-map\assets\images\logos\logo-branco.png
+
+2. logo-amarelo-icone.png
+   Origem: C:\Users\User\Desktop\Claude-Code\corpore-health-map\assets\images\logos\logo-amarelo-icone.png
+
+Após copiar, delete este arquivo .txt.
+
+Opcionalmente, adicione também o logo do MEV Vale nesta pasta (arquivo: logo-mevvale.png)
+para exibi-lo na seção "A Parceria".

@@ -1,0 +1,1192 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const LINK_INSCRICAO = "https://corporetraininggym.com.br/link/workshop-sono/";
+
+const specialists = [
+  {
+    icon: "🧠",
+    name: "Dr. Pedro Macedo",
+    role: "Neurologista e Neurofisiologista",
+    desc: "O sono e o cérebro: memória, foco, regulação emocional e o que acontece no seu sistema nervoso quando você não dorme bem.",
+  },
+  {
+    icon: "🩺",
+    name: "Dra. Roberta Vannucchi",
+    role: "Endocrinologista",
+    desc: "A relação entre sono, hormônios e metabolismo: cortisol, melatonina, testosterona, insulina — e por que tudo isso muda depois dos 40.",
+  },
+  {
+    icon: "❤️",
+    name: "Dra. Marcela Varella",
+    role: "Cardiologista",
+    desc: "Sono e coração: como a privação de sono eleva cronicamente a pressão e aumenta o risco cardiovascular.",
+  },
+  {
+    icon: "🫀",
+    name: "Dra. Thaís Pinelli",
+    role: "Nefrologista",
+    desc: "Como os rins e a regulação hídrica do corpo influenciam a qualidade do sono — e o que poucos médicos explicam.",
+  },
+  {
+    icon: "🎤",
+    name: "Filipe Paixão",
+    role: "Educador Físico",
+    desc: "Para fechar com chave de ouro: Além da Força de Vontade! A Neurociência da Tomada de Decisão e Automação de Hábitos.",
+    highlight: true,
+  },
+];
+
+const problems = [
+  { icon: "🧠", text: "Memória e foco que não são mais os mesmos" },
+  { icon: "⚖️", text: "Peso que não sai mesmo com dieta e exercício" },
+  { icon: "😤", text: "Irritabilidade, ansiedade, humor alterado" },
+  { icon: "❤️", text: "Pressão que sobe, energia que cai" },
+  { icon: "💊", text: "Dependência de remédio pra dormir sem entender a causa" },
+];
+
+const faqs = [
+  {
+    q: "Preciso ser aluno da Corpore para participar?",
+    a: "Não. O workshop está aberto para alunos e convidados. Qualquer pessoa interessada pode participar, basta garantir a vaga pelo link de inscrição.",
+  },
+  {
+    q: "O que exatamente acontece no workshop?",
+    a: "Não é uma palestra — é um workshop prático e interativo. Os 4 médicos apresentam o conteúdo, você reflete sobre o próprio sono, interage com os especialistas e sai com mais clareza sobre o que pode mudar e os caminhos possíveis para começar. No final, Filipe Paixão fala sobre neurociência e automação de hábitos.",
+  },
+  {
+    q: "Por que apenas 40 vagas?",
+    a: "O limite de 40 vagas é intencional — para garantir que a troca entre participantes e especialistas seja real, presencial e de qualidade. Com menos pessoas, você consegue interagir de verdade.",
+  },
+  {
+    q: "Qual o valor e como faço para me inscrever?",
+    a: "O investimento é R$60 por pessoa. Para garantir sua vaga, basta acessar o link de inscrição. O pagamento é feito online e a confirmação é imediata.",
+  },
+  {
+    q: "Quem são os médicos do MEV Vale?",
+    a: "O MEV Vale é referência em Medicina do Estilo de Vida no Vale do Paraíba. Os quatro médicos — neurologista, endocrinologista, cardiologista e nefrologista — atuam com ciência aplicada à saúde e qualidade de vida.",
+  },
+];
+---
+
+<Layout>
+  <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+  <header
+    style="
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      background: rgba(42, 42, 41, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    "
+  >
+    <div
+      class="section-inner"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      "
+    >
+      <!-- Logo -->
+      <a href="/" aria-label="Corpore Training Gym">
+        <img
+          src="/logo-branco.png"
+          alt="Corpore Training Gym"
+          style="height: 36px; width: auto;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <span
+          style="
+            display: none;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #fff;
+          "
+        >
+          <span style="color: var(--color-yellow);">●</span> CORPORE
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav style="display: flex; align-items: center; gap: 32px;" class="desktop-nav">
+        <a
+          href="#especialistas"
+          style="
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.72);
+            transition: color 0.2s;
+          "
+          onmouseover="this.style.color='#fff'"
+          onmouseout="this.style.color='rgba(255,255,255,0.72)'"
+        >
+          Especialistas
+        </a>
+        <a
+          href="#detalhes"
+          style="
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.72);
+            transition: color 0.2s;
+          "
+          onmouseover="this.style.color='#fff'"
+          onmouseout="this.style.color='rgba(255,255,255,0.72)'"
+        >
+          Detalhes
+        </a>
+        <a
+          href={LINK_INSCRICAO}
+          class="btn-primary animate-pulse-btn"
+          style="padding: 10px 22px; font-size: 0.88rem;"
+          target="_blank"
+          rel="noopener"
+        >
+          Garantir vaga — R$60
+        </a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="menu-toggle"
+        aria-label="Abrir menu"
+        style="
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 4px;
+        "
+      >
+        <span style="display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px;"></span>
+        <span style="display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px;"></span>
+        <span style="display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px;"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu" style="padding: 0 24px;">
+      <div style="padding: 16px 0; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+        <a href="#especialistas" style="font-weight: 600; color: rgba(255,255,255,0.8);">Especialistas</a>
+        <a href="#detalhes" style="font-weight: 600; color: rgba(255,255,255,0.8);">Detalhes</a>
+        <a href={LINK_INSCRICAO} class="btn-primary" style="text-align: center;" target="_blank" rel="noopener">
+          Garantir vaga — R$60
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         BLOCO 1 — HERO
+    ============================================================ -->
+    <section
+      id="hero"
+      aria-labelledby="hero-title"
+      style="
+        min-height: 100vh;
+        padding: 120px 24px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background:
+          radial-gradient(circle at top right, rgba(0,180,200,0.18), transparent 55%),
+          radial-gradient(circle at bottom left, rgba(70,121,154,0.22), transparent 50%),
+          linear-gradient(160deg, #2a2a29 0%, #3e3e3d 70%, #444443 100%);
+      "
+    >
+      <div class="section-inner">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+          "
+          class="hero-grid"
+        >
+          <!-- LEFT: text -->
+          <div>
+            <!-- Pills -->
+            <div class="reveal" style="margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 10px;">
+              <span
+                class="pill-tag"
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"
+              >
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-yellow); flex-shrink: 0;"></span>
+                26 de julho · Domingo · 9h–12h
+              </span>
+              <span
+                class="pill-tag"
+                style="background: rgba(0,180,200,0.12); border: 1px solid rgba(0,180,200,0.22); color: var(--color-teal);"
+              >
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-teal); flex-shrink: 0;"></span>
+                Apenas 40 vagas
+              </span>
+              <span
+                class="pill-tag"
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"
+              >
+                Aberto para alunos e convidados
+              </span>
+            </div>
+
+            <!-- Headline -->
+            <h1
+              id="hero-title"
+              class="reveal"
+              style="
+                font-family: 'Sora', sans-serif;
+                font-weight: 800;
+                font-size: clamp(1.9rem, 4vw, 3.2rem);
+                letter-spacing: -0.03em;
+                color: #fff;
+                margin-bottom: 24px;
+                line-height: 1.15;
+              "
+            >
+              Você acorda cansado todos os dias — e já nem lembra como é acordar
+              <span style="color: var(--color-yellow);"> com energia de verdade?</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <div class="reveal" style="margin-bottom: 36px;">
+              <p style="font-size: 1.05rem; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                Na Corpore, saúde vai além do treino. Por isso realizamos o primeiro Workshop de Sono — uma experiência prática com 4 médicos especialistas onde você sai com mais clareza sobre o próprio sono e os caminhos para mudar.
+              </p>
+            </div>
+
+            <!-- CTA -->
+            <div class="reveal" style="display: flex; flex-direction: column; align-items: flex-start; gap: 14px;">
+              <a
+                href={LINK_INSCRICAO}
+                class="btn-primary animate-pulse-btn"
+                target="_blank"
+                rel="noopener"
+              >
+                Quero participar — R$60
+              </a>
+              <p style="font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; color: rgba(255,255,255,0.4);">
+                Presencial na Corpore &nbsp;·&nbsp; São José dos Campos &nbsp;·&nbsp; 40 vagas
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT: foto dos 4 médicos juntos -->
+          <div class="reveal" style="position: relative;">
+            <!-- Badge superior -->
+            <div
+              style="
+                position: absolute;
+                top: -14px;
+                left: 16px;
+                z-index: 2;
+                padding: 6px 14px;
+                border-radius: 999px;
+                background: rgba(42,42,41,0.88);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.1);
+                font-size: 0.78rem;
+                font-weight: 700;
+                color: rgba(255,255,255,0.8);
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span style="color: var(--color-teal);">✦</span>
+              MEV Vale · 4 médicos especialistas
+            </div>
+
+            <!-- Foto -->
+            <div
+              style="
+                border-radius: 20px;
+                overflow: hidden;
+                border: 1px solid rgba(255,255,255,0.1);
+                position: relative;
+              "
+            >
+              <img
+                src="/foto-medicos.png"
+                alt="Os 4 médicos do MEV Vale no Workshop de Sono — da esquerda para a direita: Dra. Marcela Varella (Cardiologista), Dra. Thaís Pinelli (Nefrologista), Dra. Roberta Vannucchi (Endocrinologista) e Dr. Pedro Macedo (Neurologista)"
+                style="
+                  width: 100%;
+                  aspect-ratio: 3/4;
+                  object-fit: cover;
+                  object-position: center top;
+                  display: block;
+                "
+                onerror="this.parentElement.style.background='linear-gradient(160deg,rgba(70,121,154,0.3),rgba(0,180,200,0.15))'; this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <!-- Fallback enquanto a foto não chega -->
+              <div
+                style="
+                  display: none;
+                  width: 100%;
+                  aspect-ratio: 4/3;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                "
+              >
+                <div style="display: flex; gap: 0;">
+                  {["🧠","🩺","❤️","🫀"].map(i => (
+                    <div style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-left:-8px;">{i}</div>
+                  ))}
+                </div>
+                <p style="font-size:0.85rem;color:rgba(255,255,255,0.4);">Foto dos 4 médicos aqui</p>
+              </div>
+
+              <!-- Overlay inferior -->
+              <div
+                style="
+                  position: absolute;
+                  bottom: 0; left: 0; right: 0;
+                  padding: 28px 20px 18px;
+                  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+                "
+              >
+                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-bottom: 8px; font-weight: 500;">
+                  Neurologia · Endocrinologia · Cardiologia · Nefrologia
+                </p>
+                <span
+                  class="pill-tag"
+                  style="background: rgba(0,180,200,0.2); border: 1px solid rgba(0,180,200,0.35); color: var(--color-teal); font-size: 0.78rem;"
+                >
+                  <span style="width: 5px; height: 5px; border-radius: 50%; background: var(--color-teal); flex-shrink: 0;"></span>
+                  Medicina do Estilo de Vida
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialty badges (mobile / below grid) -->
+        <div
+          class="reveal animate-float hero-badges"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 48px;
+          "
+        >
+          {[
+            { icon: "🧠", label: "Neurologia" },
+            { icon: "🩺", label: "Endocrinologia" },
+            { icon: "❤️", label: "Cardiologia" },
+            { icon: "🫀", label: "Nefrologia" },
+            { icon: "🎤", label: "Neurociência" },
+          ].map((b) => (
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 18px;
+                border-radius: 12px;
+                background: rgba(255,255,255,0.09);
+                border: 1px solid rgba(255,255,255,0.14);
+                backdrop-filter: blur(10px);
+                color: rgba(255,255,255,0.85);
+                font-size: 0.85rem;
+                font-weight: 600;
+              "
+            >
+              <span>{b.icon}</span>
+              <span>{b.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BLOCO 2 — O PROBLEMA
+    ============================================================ -->
+    <section
+      id="problema"
+      style="padding: 96px 24px; background: var(--color-offwhite);"
+    >
+      <div class="section-inner">
+        <div class="reveal" style="max-width: 680px; margin-bottom: 56px;">
+          <p class="section-label" style="margin-bottom: 14px;">O problema</p>
+          <h2
+            style="
+              font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              color: var(--color-charcoal);
+              margin-bottom: 20px;
+            "
+          >
+            Depois dos 40, o sono muda.<br />E com ele, muda tudo.
+          </h2>
+          <p style="font-size: 1.05rem; color: #555; line-height: 1.7;">
+            A queda na qualidade do sono depois dos 40 não é coincidência — é fisiologia. O corpo começa a produzir menos melatonina, os hormônios se desequilibram, o estresse acumulado de anos cobra seu preço. E você acorda como se não tivesse dormido.
+          </p>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+          "
+        >
+          {problems.map((p, i) => (
+            <div
+              class="reveal problem-card"
+              style={`transition-delay: ${i * 0.08}s;`}
+            >
+              <span style="font-size: 1.6rem; line-height: 1; flex-shrink: 0;">{p.icon}</span>
+              <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-charcoal); line-height: 1.45;">{p.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div
+          class="reveal card-glass"
+          style="
+            padding: 28px 32px;
+            border-left: 4px solid var(--color-yellow);
+            max-width: 740px;
+          "
+        >
+          <p style="font-size: 1rem; color: #555; line-height: 1.75; font-style: italic;">
+            "Você provavelmente já testou chás, podcasts, apps de meditação e dicas da internet. Nada resolveu de verdade — porque o problema é mais complexo do que parece."
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BLOCO 3 — A SOLUÇÃO
+    ============================================================ -->
+    <section
+      id="solucao"
+      style="
+        padding: 96px 24px;
+        background:
+          radial-gradient(circle at bottom right, rgba(70,121,154,0.25), transparent 55%),
+          var(--gradient-dark);
+        color: #fff;
+      "
+    >
+      <div class="section-inner">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;" class="two-col-grid">
+          <!-- Left -->
+          <div>
+            <p class="reveal section-label" style="color: var(--color-teal); margin-bottom: 14px;">A solução</p>
+            <h2
+              class="reveal"
+              style="
+                font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+                font-weight: 800;
+                letter-spacing: -0.02em;
+                color: #fff;
+                margin-bottom: 20px;
+              "
+            >
+              Não é mais uma palestra<br />de dicas genéricas.
+            </h2>
+            <p class="reveal" style="font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 24px;">
+              No dia 26 de julho, a Corpore reúne 5 especialistas — 4 médicos do MEV Vale e um Educador Físico — para um Workshop exclusivo e presencial sobre sono.
+            </p>
+            <p class="reveal" style="font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 36px;">
+              São profissionais que entendem o que acontece no seu corpo — neurologicamente, hormonalmente, cardiovascularmente. O formato é prático e interativo: você não vai só ouvir — vai refletir sobre o seu próprio sono, interagir com os especialistas e sair com mais clareza sobre o que pode mudar e os caminhos possíveis para começar.
+            </p>
+            <a
+              href={LINK_INSCRICAO}
+              class="reveal btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Garantir minha vaga
+            </a>
+          </div>
+
+          <!-- Right: feature cards -->
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            {[
+              {
+                label: "Interativo",
+                desc: "Você não apenas ouve — reflete, responde e constrói junto com os especialistas.",
+                icon: "🙋",
+              },
+              {
+                label: "5 especialistas",
+                desc: "4 médicos do MEV Vale + Educador Físico Filipe Paixão. Todas as facetas do sono cobertas.",
+                icon: "👨‍⚕️",
+              },
+              {
+                label: "Apenas 40 vagas",
+                desc: "Para garantir que a troca entre você e os especialistas seja real e de qualidade.",
+                icon: "🔒",
+              },
+              {
+                label: "3 horas de conteúdo",
+                desc: "2 horas com os médicos + 1 hora com Filipe Paixão sobre neurociência e hábitos.",
+                icon: "⏱️",
+              },
+            ].map((f, i) => (
+              <div
+                class="reveal"
+                style={`
+                  display: flex;
+                  gap: 16px;
+                  padding: 20px 22px;
+                  border-radius: 16px;
+                  background: rgba(255,255,255,0.07);
+                  border: 1px solid rgba(255,255,255,0.10);
+                  transition-delay: ${i * 0.1}s;
+                `}
+              >
+                <span style="font-size: 1.5rem; flex-shrink: 0; line-height: 1;">{f.icon}</span>
+                <div>
+                  <p style="font-family: 'Sora', sans-serif; font-weight: 700; color: #fff; margin-bottom: 4px;">{f.label}</p>
+                  <p style="font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.55;">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BLOCO 4 — OS ESPECIALISTAS
+    ============================================================ -->
+    <section
+      id="especialistas"
+      style="padding: 96px 24px; background: var(--color-offwhite);"
+    >
+      <div class="section-inner">
+        <div class="reveal" style="text-align: center; max-width: 620px; margin: 0 auto 60px;">
+          <p class="section-label" style="margin-bottom: 14px;">Os especialistas</p>
+          <h2
+            style="
+              font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              color: var(--color-charcoal);
+              margin-bottom: 16px;
+            "
+          >
+            Cinco especialistas.<br />Um objetivo: te ajudar a dormir melhor.
+          </h2>
+          <p style="font-size: 1rem; color: #666; line-height: 1.7;">
+            Os 4 médicos são integrantes do MEV Vale — Medicina do Estilo de Vida do Vale do Paraíba.
+          </p>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+          "
+        >
+          {specialists.map((s, i) => (
+            <div
+              class="reveal specialist-card"
+              style={`
+                transition-delay: ${i * 0.08}s;
+                ${s.highlight ? 'border: 2px solid var(--color-yellow); background: linear-gradient(135deg, #fffde7, #fff);' : ''}
+              `}
+            >
+              <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                <span
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 14px;
+                    background: var(--color-mist);
+                    font-size: 1.5rem;
+                    flex-shrink: 0;
+                  "
+                >
+                  {s.icon}
+                </span>
+                <div>
+                  <p
+                    style="
+                      font-family: 'Sora', sans-serif;
+                      font-weight: 700;
+                      font-size: 1rem;
+                      color: var(--color-charcoal);
+                      margin-bottom: 2px;
+                    "
+                  >
+                    {s.name}
+                  </p>
+                  <p
+                    style="
+                      font-size: 0.8rem;
+                      font-weight: 600;
+                      color: var(--color-blue);
+                    "
+                  >
+                    {s.role}
+                  </p>
+                </div>
+              </div>
+              <p style="font-size: 0.92rem; color: #555; line-height: 1.6;">{s.desc}</p>
+              {s.highlight && (
+                <div
+                  style="
+                    margin-top: 14px;
+                    padding: 8px 14px;
+                    border-radius: 999px;
+                    background: var(--color-yellow);
+                    display: inline-block;
+                    font-size: 0.78rem;
+                    font-weight: 700;
+                    color: var(--color-charcoal);
+                  "
+                >
+                  Encerrando com chave de ouro ✦
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <!-- MEV Vale badge -->
+        <div
+          class="reveal"
+          style="
+            margin-top: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 20px 32px;
+            border-radius: 16px;
+            background: rgba(0,180,200,0.08);
+            border: 1px solid rgba(0,180,200,0.2);
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          <span style="font-size: 1.4rem;">🏥</span>
+          <p style="font-size: 0.92rem; color: #444; line-height: 1.55;">
+            <strong style="color: var(--color-charcoal);">MEV Vale</strong> — Medicina do Estilo de Vida do Vale do Paraíba.<br />
+            Ciência aplicada à saúde real, em parceria exclusiva com a Corpore.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BLOCO 5 — DETALHES DO EVENTO
+    ============================================================ -->
+    <section
+      id="detalhes"
+      style="
+        padding: 96px 24px;
+        background:
+          radial-gradient(circle at top left, rgba(0,180,200,0.12), transparent 50%),
+          var(--gradient-dark);
+        color: #fff;
+      "
+    >
+      <div class="section-inner">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;" class="two-col-grid">
+          <!-- Left: title -->
+          <div>
+            <p class="reveal section-label" style="color: var(--color-teal); margin-bottom: 14px;">Informações</p>
+            <h2
+              class="reveal"
+              style="
+                font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+                font-weight: 800;
+                letter-spacing: -0.02em;
+                color: #fff;
+                margin-bottom: 20px;
+              "
+            >
+              Tudo o que você<br />precisa saber.
+            </h2>
+            <p class="reveal" style="font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 36px;">
+              Um evento presencial, exclusivo, com especialistas reais — não um webinar para centenas de pessoas.
+            </p>
+
+            <a
+              href={LINK_INSCRICAO}
+              class="reveal btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Garantir minha vaga — R$60
+            </a>
+          </div>
+
+          <!-- Right: details -->
+          <div
+            class="reveal"
+            style="
+              background: rgba(255,255,255,0.06);
+              border: 1px solid rgba(255,255,255,0.1);
+              border-radius: 20px;
+              padding: 32px 28px;
+            "
+          >
+            {[
+              { icon: "📅", label: "Data", value: "26 de julho de 2026 — Domingo" },
+              { icon: "🕘", label: "Horário", value: "9h às 12h" },
+              { icon: "📍", label: "Local", value: "Academia Corpore — Av. Barão do Rio Branco, 540 - Esplanada, São José dos Campos, SP" },
+              { icon: "💰", label: "Investimento", value: "R$60 por pessoa" },
+              { icon: "🔒", label: "Vagas", value: "Apenas 40 — para garantir interação real com os especialistas" },
+            ].map((d) => (
+              <div class="detail-row">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background: rgba(255,255,255,0.08);
+                    font-size: 1.1rem;
+                    flex-shrink: 0;
+                  "
+                >
+                  {d.icon}
+                </div>
+                <div>
+                  <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: 2px;">
+                    {d.label}
+                  </p>
+                  <p style="font-size: 0.95rem; color: rgba(255,255,255,0.88); font-weight: 500; line-height: 1.45;">
+                    {d.value}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BLOCO 6 — CORPORE × MEV VALE
+    ============================================================ -->
+    <section
+      id="sobre"
+      style="padding: 96px 24px; background: var(--color-white);"
+    >
+      <div class="section-inner">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;" class="two-col-grid">
+          <!-- Left: visual -->
+          <div class="reveal" style="display: flex; flex-direction: column; gap: 16px;">
+            <div
+              style="
+                padding: 40px;
+                border-radius: 24px;
+                background: var(--gradient-dark);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                min-height: 280px;
+                text-align: center;
+              "
+            >
+              <img
+                src="/logo-amarelo-icone.png"
+                alt="Logo Corpore"
+                style="height: 72px; width: auto;"
+                onerror="this.outerHTML='<div style=\'width:72px;height:72px;border-radius:50%;background:var(--color-yellow);display:flex;align-items:center;justify-content:center;font-family:Sora,sans-serif;font-weight:800;font-size:1.5rem;color:#3e3e3d;\'>C</div>'"
+              />
+              <div
+                style="
+                  width: 60px;
+                  height: 2px;
+                  background: rgba(255,255,255,0.2);
+                  border-radius: 2px;
+                "
+              ></div>
+              <div>
+                <p
+                  style="
+                    font-family: 'Sora', sans-serif;
+                    font-size: 1.1rem;
+                    font-weight: 800;
+                    letter-spacing: 0.1em;
+                    color: var(--color-teal);
+                    text-transform: uppercase;
+                  "
+                >
+                  MEVVALE
+                </p>
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 4px;">
+                  Medicina do Estilo de Vida
+                </p>
+              </div>
+            </div>
+            <p
+              style="
+                text-align: center;
+                font-size: 0.85rem;
+                color: #888;
+                font-style: italic;
+              "
+            >
+              Uma parceria feita para ir além.
+            </p>
+          </div>
+
+          <!-- Right: text -->
+          <div>
+            <p class="reveal section-label" style="margin-bottom: 14px;">A parceria</p>
+            <h2
+              class="reveal"
+              style="
+                font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+                font-weight: 800;
+                letter-spacing: -0.02em;
+                color: var(--color-charcoal);
+                margin-bottom: 20px;
+              "
+            >
+              Academia Corpore<br />× MEV Vale
+            </h2>
+            <p class="reveal" style="font-size: 1rem; color: #555; line-height: 1.8; margin-bottom: 20px;">
+              A <strong>Academia Corpore</strong>, localizada na Av. Barão do Rio Branco, 540 - Esplanada, São José dos Campos, SP, é referência em saúde e qualidade de vida na cidade. Aqui, pensamos na saúde completa das pessoas — não apenas no treino.
+            </p>
+            <p class="reveal" style="font-size: 1rem; color: #555; line-height: 1.8; margin-bottom: 32px;">
+              Por isso criamos uma parceria exclusiva com o <strong>MEV Vale</strong>, referência em Medicina do Estilo de Vida no Vale do Paraíba, para trazer o que há de mais sério em ciência aplicada à saúde dentro da nossa estrutura.
+            </p>
+            <blockquote
+              class="reveal"
+              style="
+                padding: 20px 24px;
+                border-left: 4px solid var(--color-yellow);
+                border-radius: 0 12px 12px 0;
+                background: linear-gradient(135deg, #fffde7, #fff8e1);
+                font-style: italic;
+                color: var(--color-charcoal);
+                font-size: 1.05rem;
+                font-weight: 600;
+                line-height: 1.55;
+              "
+            >
+              "Uma noite muda tudo."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section
+      id="faq"
+      style="padding: 96px 24px; background: var(--color-offwhite);"
+    >
+      <div class="section-inner">
+        <div class="reveal" style="max-width: 660px; margin: 0 auto 52px; text-align: center;">
+          <p class="section-label" style="margin-bottom: 14px;">Dúvidas frequentes</p>
+          <h2
+            style="
+              font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              color: var(--color-charcoal);
+            "
+          >
+            Perguntas frequentes
+          </h2>
+        </div>
+
+        <div style="max-width: 720px; margin: 0 auto;">
+          {faqs.map((faq, i) => (
+            <div class="reveal accordion-item" style={`transition-delay: ${i * 0.06}s;`}>
+              <button
+                class="accordion-btn"
+                data-target={`faq-${i}`}
+                aria-expanded="false"
+              >
+                <span>{faq.q}</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div id={`faq-${i}`} class="accordion-content">
+                {faq.a}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BLOCO 7 — CTA FINAL
+    ============================================================ -->
+    <section
+      id="cta"
+      style="
+        padding: 100px 24px;
+        text-align: center;
+        background:
+          radial-gradient(circle at center, rgba(0,180,200,0.16), transparent 65%),
+          radial-gradient(circle at top right, rgba(226,222,30,0.1), transparent 50%),
+          var(--gradient-dark);
+        color: #fff;
+      "
+    >
+      <div class="section-inner" style="max-width: 680px;">
+        <span
+          class="reveal pill-tag"
+          style="
+            background: rgba(226,222,30,0.12);
+            border: 1px solid rgba(226,222,30,0.25);
+            color: var(--color-yellow);
+            margin-bottom: 28px;
+            display: inline-flex;
+          "
+        >
+          ⚠️ Apenas 40 vagas disponíveis
+        </span>
+
+        <h2
+          class="reveal"
+          style="
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.15;
+          "
+        >
+          São apenas 40 vagas.
+        </h2>
+        <p
+          class="reveal"
+          style="
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 44px;
+            line-height: 1.7;
+          "
+        >
+          Este é um evento presencial, exclusivo, com especialistas reais — não um webinar para centenas de pessoas. Garanta a sua vaga antes que esgote.
+        </p>
+
+        <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+          <a
+            href={LINK_INSCRICAO}
+            class="btn-primary animate-pulse-btn"
+            target="_blank"
+            rel="noopener"
+            style="font-size: 1.1rem; padding: 18px 40px;"
+          >
+            Garantir minha vaga — R$60
+          </a>
+          <p style="font-size: 0.82rem; color: rgba(255,255,255,0.35); font-weight: 500;">
+            26/07 · Domingo · 9h–12h · Corpore · SJC
+          </p>
+          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.5);">
+            Dúvidas? Entre em contato pelo WhatsApp da Corpore.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer
+    style="
+      padding: 40px 24px;
+      background: #222221;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    "
+  >
+    <div
+      class="section-inner"
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      "
+    >
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <img
+          src="/logo-branco.png"
+          alt="Corpore Training Gym"
+          style="height: 28px; width: auto;"
+          onerror="this.style.display='none';"
+        />
+        <span
+          style="
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+          "
+        >
+          × MEV Vale
+        </span>
+      </div>
+
+      <p style="font-size: 0.8rem; color: rgba(255,255,255,0.3); line-height: 1.6; text-align: center;">
+        Av. Barão do Rio Branco, 540 · Esplanada · São José dos Campos, SP<br />
+        Workshop de Sono · 26 de julho de 2026
+      </p>
+
+      <a
+        href={LINK_INSCRICAO}
+        style="
+          font-size: 0.82rem;
+          font-weight: 700;
+          color: var(--color-yellow);
+          text-decoration: none;
+        "
+        target="_blank"
+        rel="noopener"
+      >
+        Inscrições →
+      </a>
+    </div>
+  </footer>
+
+</Layout>
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+  // Scroll Reveal
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  // FAQ Accordion
+  document.querySelectorAll('.accordion-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+      const isOpen = content?.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.accordion-content').forEach((c) => c.classList.remove('open'));
+      document.querySelectorAll('.accordion-btn').forEach((b) => b.classList.remove('open'));
+
+      // Open clicked
+      if (!isOpen && content) {
+        content.classList.add('open');
+        btn.classList.add('open');
+      }
+    });
+  });
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('open');
+  });
+
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // Header: responsive nav visibility
+  const desktopNav = document.querySelector('.desktop-nav') as HTMLElement | null;
+  const menuBtn = document.getElementById('menu-toggle') as HTMLElement | null;
+
+  function setNav() {
+    if (window.innerWidth < 768) {
+      if (desktopNav) desktopNav.style.display = 'none';
+      if (menuBtn) menuBtn.style.display = 'flex';
+    } else {
+      if (desktopNav) desktopNav.style.display = 'flex';
+      if (menuBtn) menuBtn.style.display = 'none';
+      mobileMenu?.classList.remove('open');
+    }
+  }
+
+  setNav();
+  window.addEventListener('resize', setNav);
+
+  // Two-col grid responsive (seções internas + hero)
+  function setGrids() {
+    document.querySelectorAll('.two-col-grid').forEach((g) => {
+      const el = g as HTMLElement;
+      if (window.innerWidth < 900) {
+        el.style.gridTemplateColumns = '1fr';
+        el.style.gap = '40px';
+      } else {
+        el.style.gridTemplateColumns = '1fr 1fr';
+        el.style.gap = '64px';
+      }
+    });
+
+    // Hero grid: empilha foto abaixo do texto em mobile
+    const heroGrid = document.querySelector('.hero-grid') as HTMLElement | null;
+    const heroBadges = document.querySelector('.hero-badges') as HTMLElement | null;
+    if (heroGrid) {
+      if (window.innerWidth < 900) {
+        heroGrid.style.gridTemplateColumns = '1fr';
+        heroGrid.style.gap = '40px';
+      } else {
+        heroGrid.style.gridTemplateColumns = '1fr 1fr';
+        heroGrid.style.gap = '56px';
+      }
+    }
+    // Badges de especialidade: visíveis só em mobile (no desktop a foto já cobre)
+    if (heroBadges) {
+      heroBadges.style.display = window.innerWidth < 900 ? 'flex' : 'none';
+    }
+  }
+
+  setGrids();
+  window.addEventListener('resize', setGrids);
+</script>
