@@ -1187,8 +1187,8 @@ const faqs = [
     firePixelEvent('ViewContent');
   }, 1200);
 
-  // Contact: clique no botao de WhatsApp
-  document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+  // Contact: clique em qualquer botao de inscricao/WhatsApp
+  document.querySelectorAll('a[href*="workshop-sono"]').forEach((link) => {
     link.addEventListener('click', () => {
       firePixelEvent('Contact');
     });
