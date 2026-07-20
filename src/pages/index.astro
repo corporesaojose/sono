@@ -15,7 +15,7 @@ const specialists = [
     icon: "🩺",
     name: "Dra. Roberta Vannucchi",
     role: "Endocrinologista",
-    desc: "A relação entre sono, hormônios e metabolismo: cortisol, melatonina, testosterona, insulina — e por que tudo isso muda depois dos 40.",
+    desc: "A relação entre sono, hormônios e metabolismo: cortisol, melatonina, testosterona, insulina, e por que tudo isso muda depois dos 40.",
   },
   {
     icon: "❤️",
@@ -24,10 +24,10 @@ const specialists = [
     desc: "Sono e coração: como a privação de sono eleva cronicamente a pressão e aumenta o risco cardiovascular.",
   },
   {
-    icon: "🫀",
+    icon: "💧",
     name: "Dra. Thaís Pinelli",
     role: "Nefrologista",
-    desc: "Como os rins e a regulação hídrica do corpo influenciam a qualidade do sono — e o que poucos médicos explicam.",
+    desc: "Como os rins e a regulação hídrica do corpo influenciam a qualidade do sono, e o que poucos médicos explicam.",
   },
   {
     icon: "🎤",
@@ -53,11 +53,11 @@ const faqs = [
   },
   {
     q: "O que exatamente acontece no workshop?",
-    a: "Não é uma palestra — é um workshop prático e interativo. Os 4 médicos apresentam o conteúdo, você reflete sobre o próprio sono, interage com os especialistas e sai com mais clareza sobre o que pode mudar e os caminhos possíveis para começar. No final, Filipe Paixão fala sobre neurociência e automação de hábitos.",
+    a: "Não é uma palestra: é um workshop prático e interativo. Os 4 médicos apresentam o conteúdo, você reflete sobre o próprio sono, interage com os especialistas e sai com mais clareza sobre o que pode mudar e os caminhos possíveis para começar. No final, Filipe Paixão fala sobre neurociência e automação de hábitos.",
   },
   {
     q: "Por que apenas 40 vagas?",
-    a: "O limite de 40 vagas é intencional — para garantir que a troca entre participantes e especialistas seja real, presencial e de qualidade. Com menos pessoas, você consegue interagir de verdade.",
+    a: "O limite de 40 vagas é intencional, para garantir que a troca entre participantes e especialistas seja real, presencial e de qualidade. Com menos pessoas, você consegue interagir de verdade.",
   },
   {
     q: "Qual o valor e como faço para me inscrever?",
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: "Quem são os médicos do MEV Vale?",
-    a: "O MEV Vale é referência em Medicina do Estilo de Vida no Vale do Paraíba. Os quatro médicos — neurologista, endocrinologista, cardiologista e nefrologista — atuam com ciência aplicada à saúde e qualidade de vida.",
+    a: "O MEV Vale é referência em Medicina do Estilo de Vida no Vale do Paraíba. Os quatro médicos (neurologista, endocrinologista, cardiologista e nefrologista) atuam com ciência aplicada à saúde e qualidade de vida.",
   },
 ];
 ---
@@ -153,7 +153,7 @@ const faqs = [
           target="_blank"
           rel="noopener"
         >
-          Garantir vaga · R$60
+          Quero Participar!
         </a>
       </nav>
 
@@ -183,7 +183,7 @@ const faqs = [
         <a href="#especialistas" style="font-weight: 600; color: rgba(255,255,255,0.8);">Especialistas</a>
         <a href="#detalhes" style="font-weight: 600; color: rgba(255,255,255,0.8);">Detalhes</a>
         <a href={LINK_INSCRICAO} class="btn-primary" style="text-align: center;" target="_blank" rel="noopener">
-          Garantir vaga · R$60
+          Quero Participar!
         </a>
       </div>
     </div>
@@ -221,30 +221,6 @@ const faqs = [
         >
           <!-- LEFT: text -->
           <div>
-            <!-- Pills -->
-            <div class="reveal" style="margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 10px;">
-              <span
-                class="pill-tag"
-                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"
-              >
-                <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-yellow); flex-shrink: 0;"></span>
-                26 de julho · Domingo · 9h–12h
-              </span>
-              <span
-                class="pill-tag"
-                style="background: rgba(0,180,200,0.12); border: 1px solid rgba(0,180,200,0.22); color: var(--color-teal);"
-              >
-                <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-teal); flex-shrink: 0;"></span>
-                Apenas 40 vagas
-              </span>
-              <span
-                class="pill-tag"
-                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"
-              >
-                Aberto para alunos e convidados
-              </span>
-            </div>
-
             <!-- Headline -->
             <h1
               id="hero-title"
@@ -278,11 +254,32 @@ const faqs = [
                 target="_blank"
                 rel="noopener"
               >
-                Quero participar · R$60
+                Quero Participar!
               </a>
-              <p style="font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; color: rgba(255,255,255,0.4);">
-                Presencial na Corpore &nbsp;·&nbsp; São José dos Campos &nbsp;·&nbsp; 40 vagas
-              </p>
+
+              <!-- Pills -->
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px;">
+                <span
+                  class="pill-tag"
+                  style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"
+                >
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-yellow); flex-shrink: 0;"></span>
+                  26 de julho · Domingo · 9h–12h
+                </span>
+                <span
+                  class="pill-tag"
+                  style="background: rgba(0,180,200,0.12); border: 1px solid rgba(0,180,200,0.22); color: var(--color-teal);"
+                >
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-teal); flex-shrink: 0;"></span>
+                  Apenas 40 vagas
+                </span>
+                <span
+                  class="pill-tag"
+                  style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"
+                >
+                  Aberto para alunos e convidados
+                </span>
+              </div>
             </div>
           </div>
 
@@ -309,7 +306,7 @@ const faqs = [
               "
             >
               <span style="color: var(--color-teal);">✦</span>
-              MEV Vale · 4 médicos especialistas
+              Médicos Especialistas em Medicina do Estilo de Vida!
             </div>
 
             <!-- Foto -->
@@ -362,9 +359,6 @@ const faqs = [
                   background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
                 "
               >
-                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-bottom: 8px; font-weight: 500;">
-                  Neurologia · Endocrinologia · Cardiologia · Nefrologia
-                </p>
                 <span
                   class="pill-tag"
                   style="background: rgba(0,180,200,0.2); border: 1px solid rgba(0,180,200,0.35); color: var(--color-teal); font-size: 0.78rem;"
@@ -377,43 +371,6 @@ const faqs = [
           </div>
         </div>
 
-        <!-- Specialty badges (mobile / below grid) -->
-        <div
-          class="reveal animate-float hero-badges"
-          style="
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 48px;
-          "
-        >
-          {[
-            { icon: "🧠", label: "Neurologia" },
-            { icon: "🩺", label: "Endocrinologia" },
-            { icon: "❤️", label: "Cardiologia" },
-            { icon: "🫀", label: "Nefrologia" },
-            { icon: "🎤", label: "Neurociência" },
-          ].map((b) => (
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                padding: 10px 18px;
-                border-radius: 12px;
-                background: rgba(255,255,255,0.09);
-                border: 1px solid rgba(255,255,255,0.14);
-                backdrop-filter: blur(10px);
-                color: rgba(255,255,255,0.85);
-                font-size: 0.85rem;
-                font-weight: 600;
-              "
-            >
-              <span>{b.icon}</span>
-              <span>{b.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
 
@@ -440,7 +397,7 @@ const faqs = [
             Depois dos 40, o sono muda.<br />E com ele, muda tudo.
           </h2>
           <p style="font-size: 1.05rem; color: #555; line-height: 1.7;">
-            A queda na qualidade do sono depois dos 40 não é coincidência — é fisiologia. O corpo começa a produzir menos melatonina, os hormônios se desequilibram, o estresse acumulado de anos cobra seu preço. E você acorda como se não tivesse dormido.
+            A queda na qualidade do sono depois dos 40 não é coincidência: é fisiologia. O corpo começa a produzir menos melatonina, os hormônios se desequilibram, o estresse acumulado de anos cobra seu preço. E você acorda como se não tivesse dormido.
           </p>
         </div>
 
@@ -472,7 +429,7 @@ const faqs = [
           "
         >
           <p style="font-size: 1rem; color: #555; line-height: 1.75; font-style: italic;">
-            "Você provavelmente já testou chás, podcasts, apps de meditação e dicas da internet. Nada resolveu de verdade — porque o problema é mais complexo do que parece."
+            "Você provavelmente já testou chás, podcasts, apps de meditação e dicas da internet. Nada resolveu de verdade, porque o problema é mais complexo do que parece."
           </p>
         </div>
       </div>
@@ -510,10 +467,10 @@ const faqs = [
               Não é mais uma palestra<br />de dicas genéricas.
             </h2>
             <p class="reveal" style="font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 24px;">
-              No dia 26 de julho, a Corpore reúne 5 especialistas — 4 médicos do MEV Vale e um Educador Físico — para um Workshop exclusivo e presencial sobre sono.
+              No dia 26 de julho, a Corpore reúne 5 especialistas: 4 médicos do MEV Vale e um Educador Físico, para um Workshop exclusivo e presencial sobre sono.
             </p>
             <p class="reveal" style="font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 36px;">
-              São profissionais que entendem o que acontece no seu corpo — neurologicamente, hormonalmente, cardiovascularmente. O formato é prático e interativo: você não vai só ouvir — vai refletir sobre o seu próprio sono, interagir com os especialistas e sair com mais clareza sobre o que pode mudar e os caminhos possíveis para começar.
+              São profissionais que entendem o que acontece no seu corpo: neurologicamente, hormonalmente, cardiovascularmente. O formato é prático e interativo. Você não vai só ouvir, vai refletir sobre o seu próprio sono, interagir com os especialistas e sair com mais clareza sobre o que pode mudar e os caminhos possíveis para começar.
             </p>
             <a
               href={LINK_INSCRICAO}
@@ -521,7 +478,7 @@ const faqs = [
               target="_blank"
               rel="noopener"
             >
-              Garantir minha vaga
+              Quero me inscrever no Workshop
             </a>
           </div>
 
@@ -530,7 +487,7 @@ const faqs = [
             {[
               {
                 label: "Interativo",
-                desc: "Você não apenas ouve — reflete, responde e constrói junto com os especialistas.",
+                desc: "Você não apenas ouve: reflete, responde e constrói junto com os especialistas.",
                 icon: "🙋",
               },
               {
@@ -596,7 +553,7 @@ const faqs = [
             Cinco especialistas.<br />Um objetivo: te ajudar a dormir melhor.
           </h2>
           <p style="font-size: 1rem; color: #666; line-height: 1.7;">
-            Os 4 médicos são integrantes do MEV Vale — Medicina do Estilo de Vida do Vale do Paraíba.
+            Os 4 médicos são integrantes do MEV Vale, Medicina do Estilo de Vida do Vale do Paraíba.
           </p>
         </div>
 
@@ -695,7 +652,7 @@ const faqs = [
         >
           <span style="font-size: 1.4rem;">🏥</span>
           <p style="font-size: 0.92rem; color: #444; line-height: 1.55;">
-            <strong style="color: var(--color-charcoal);">MEV Vale</strong> — Medicina do Estilo de Vida do Vale do Paraíba.<br />
+            <strong style="color: var(--color-charcoal);">MEV Vale</strong>, Medicina do Estilo de Vida do Vale do Paraíba.<br />
             Ciência aplicada à saúde real, em parceria exclusiva com a Corpore.
           </p>
         </div>
@@ -734,7 +691,7 @@ const faqs = [
               Tudo o que você<br />precisa saber.
             </h2>
             <p class="reveal" style="font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 36px;">
-              Um evento presencial, exclusivo, com especialistas reais — não um webinar para centenas de pessoas.
+              Um evento presencial, exclusivo, com especialistas reais, não um webinar para centenas de pessoas.
             </p>
 
             <a
@@ -743,7 +700,7 @@ const faqs = [
               target="_blank"
               rel="noopener"
             >
-              Garantir minha vaga · R$60
+              Quero me inscrever no Workshop · R$60
             </a>
           </div>
 
@@ -881,7 +838,7 @@ const faqs = [
               Academia Corpore<br />× MEV Vale
             </h2>
             <p class="reveal" style="font-size: 1rem; color: #555; line-height: 1.8; margin-bottom: 20px;">
-              A <strong>Academia Corpore</strong>, localizada na Av. Barão do Rio Branco, 540 - Esplanada, São José dos Campos, SP, é referência em saúde e qualidade de vida na cidade. Aqui, pensamos na saúde completa das pessoas — não apenas no treino.
+              A <strong>Academia Corpore</strong>, localizada na Av. Barão do Rio Branco, 540 - Esplanada, São José dos Campos, SP, é referência em saúde e qualidade de vida na cidade. Aqui, pensamos na saúde completa das pessoas, não apenas no treino.
             </p>
             <p class="reveal" style="font-size: 1rem; color: #555; line-height: 1.8; margin-bottom: 32px;">
               Por isso criamos uma parceria exclusiva com o <strong>MEV Vale</strong>, referência em Medicina do Estilo de Vida no Vale do Paraíba, para trazer o que há de mais sério em ciência aplicada à saúde dentro da nossa estrutura.
@@ -1002,7 +959,7 @@ const faqs = [
             line-height: 1.7;
           "
         >
-          Este é um evento presencial, exclusivo, com especialistas reais — não um webinar para centenas de pessoas. Garanta a sua vaga antes que esgote.
+          Este é um evento presencial, exclusivo, com especialistas reais, não um webinar para centenas de pessoas. Garanta a sua vaga antes que esgote.
         </p>
 
         <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
@@ -1080,7 +1037,7 @@ const faqs = [
         target="_blank"
         rel="noopener"
       >
-        Inscrições →
+        Quero me inscrever no Workshop →
       </a>
     </div>
   </footer>
